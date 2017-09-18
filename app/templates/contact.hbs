@@ -1,0 +1,18 @@
+<h1>Contact</h1>
+<p>Send an email to Sean signal your arousal</p>
+<div class="form-horizontal form-group form-group-lg row">
+    <div class="col-xs-10 col-sm-6 col-md-5">
+        {{input type="email" value=contactEmail class="form-control" placeholder="Please type your email address." 
+            autofocus="autofocus"}}
+        <br/>
+        {{textarea class="form-control" placeholder="Your message. (At least 5 characters)" rows="7" value=message}}    
+    </div>
+</div>
+<div class="form-horizontal form-group form-group-lg row">
+    <div class="col-xs-10 col-sm-3 col-md-2">
+        <button disabled="{{unless isEnabled 'disabled'}}" class="btn btn-primary btn-lg btn-block" {{action 'sendMessage'}}>Send</button>
+    </div>
+</div>
+{{#if responseMessage}}
+<div class="alert alert-success">{{responseMessage}}</div>
+{{/if}}
