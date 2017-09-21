@@ -10,11 +10,13 @@ export default Ember.Route.extend({
             newContact.save().then(() => {
                 newContact.set('email', '');
                 newContact.set('message', '');
+                this.controller.set('responseMessage', true);
             });
         },
 
         willTransition() {
             this.controller.get('model').rollbackAttributes();
+            this.controller.set('responseMessage', false);
         }
     }
 });
