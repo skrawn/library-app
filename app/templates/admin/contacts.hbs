@@ -3,16 +3,18 @@
 <table class="table table-bordered table-scripted">
     <thead>
         <tr>
-            <th>E-mail</th>
-            <th>Message</th>
+            <th class="col-sm-4">E-mail</th>
+            <th class="col-sm-7">Message</th>     
+            <th class="col-sm-1"></th>       
         </tr>
     </thead>
     <tbody>
-        {{#each model as |contact|}}
+        {{#each model as |contact|}}            
             <tr>
-                <th>{{contact.email}}</th>
-                <td>{{contact.message}}</td>
-            </tr>
+                <td>{{contact.email}}</td>
+                <td>{{contact.message}}</td>                
+                <td><button class="btn btn-danger btn-s" {{action 'deleteContact' contact}}>Delete</button></td>
+            </tr>            
         {{/each}}
     </tbody>
 </table>

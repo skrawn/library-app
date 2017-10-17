@@ -3,8 +3,9 @@
 <table class="table table-bordered table-scripted">
     <thead>
         <tr>
-            <th>ID</th>
-            <th>E-mail</th>
+            <th class="col-sm-4">ID</th>
+            <th class="col-sm-4">E-mail</th>
+            <th class="col-sm-1"></th>
         </tr>
     </thead>
     <tbody>
@@ -12,6 +13,7 @@
             <tr>
                 <th>{{invitation.id}}</th>
                 <td>{{invitation.email}}</td>
+                <td><button class="btn btn-danger btn-s" {{action 'deleteInvitation' invitation}}>Delete</button></td>
             </tr>
         {{/each}}
     </tbody>
